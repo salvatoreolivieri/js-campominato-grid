@@ -1,3 +1,7 @@
+/* 
+Global 
+*/
+
 *{
   margin: 0;
   padding: 0;
@@ -5,13 +9,32 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+/* 
+Header & Footer
+*/
+
+header,
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+
+/* 
+Main 
+*/
+
 .main-wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: #021527;
-  height: 100vh;
+  height: calc(100vh - 100px);
 }
 
 .container{
