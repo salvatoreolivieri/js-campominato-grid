@@ -1,0 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #021527;
+  height: 100vh;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  width: 500px;
+  height: 500px;
+}
+
+.square-100{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  border: 2px solid white;
+
+  color: white;
+  cursor: pointer;
+}
+
+.square-64{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc(100% / 8);
+  height: calc(100% / 8);
+  border: 2px solid white;
+
+  color: white;
+  cursor: pointer;
+}
+
+.square-49{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+  border: 2px solid white;
+
+  color: white;
+  cursor: pointer;
+}
+
+.square-100 span{
+  display: none;
+}
+
+.square-100 .clicked span{
+  display: block;
+}
+
+.square-100 .clicked{
+  background-color: skyblue;
+}
+
+
+/* .square-even{
+  background-color: aquamarine;
+}
+
+.square-odd{
+  background-color: brown;
+} */
