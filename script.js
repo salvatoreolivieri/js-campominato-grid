@@ -18,25 +18,57 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 // 1. Inseriamo una costante che al click del bottone "conferma" fa partire la nostra WebApp
 
-const container = document.querySelector(".container");
-
 const btnConfirm = document.getElementById("conferma");
 btnConfirm.addEventListener("click", init);
 
-
 function init() {
+
+  const container = document.querySelector(".container");
+  container.innerHTML = "";
+
   for(let x = 1; x <= 100; x++){
-    const square = squareGenerator();
-  }
+
+    const square = squareGenerator(container);
+
+    square.addEventListener("click", function() {
+      this.classList.add("clicked");
+    })
+  } 
+
+
 }
 
 
 // 2. Funzione per generare i quadrati
 
-function squareGenerator() {
+function squareGenerator(target) {
   const square = document.createElement("div");
   square.classList.add("square-100");
-  container.append(square);
 
+  const number = uniqueRandomNumberGenerator(100,1);
+  square.innerHTML = number;
+
+  target.append(square);
   return square;
+}
+
+
+// 3. Random number
+
+function uniqueRandomNumberGenerator(max, min) {
+
+  let number = Math.floor(Math.random() * (max - min + 1) ) + min;
+
+  // function createArrayNymbers(params) {
+  //   let listNumber = [];
+    
+  //   for (let x=1; 1<=100; x++){
+  //     listNumber.push(i);
+  //   }
+
+    // return listNumber;
+  // }
+
+  return number;
+
 }

@@ -93,7 +93,7 @@ Main
   display: block;
 }
 
-.square-100 .clicked{
+.square-100.clicked{
   background-color: skyblue;
 }
 
