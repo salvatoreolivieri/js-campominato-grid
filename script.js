@@ -18,17 +18,23 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 // 1. Inseriamo una costante che al click del bottone "conferma" fa partire la nostra WebApp
 
+const container = document.querySelector(".container");
+
 const btnConfirm = document.getElementById("conferma");
-btnConfirm.addEventListener("click", init);
+btnConfirm.addEventListener("click", play);
 
-function init() {
+function play() {
 
-  const container = document.querySelector(".container");
-  container.innerHTML = "";
+  reset();
 
-  for(let x = 1; x <= 100; x++){
+  const cellNumbers = parseInt(document.getElementById("level").value);
+  console.log(cellNumbers);
 
-    const square = squareGenerator(container);
+  for(let x = 1; x <= cellNumbers; x++){
+
+    const square = squareGenerator(cellNumbers);
+    square.innerHTML = x;
+
 
     square.addEventListener("click", function() {
       this.classList.add("clicked");
@@ -38,37 +44,17 @@ function init() {
 
 }
 
-
-// 2. Funzione per generare i quadrati
-
-function squareGenerator(target) {
-  const square = document.createElement("div");
-  square.classList.add("square-100");
-
-  const number = uniqueRandomNumberGenerator(100,1);
-  square.innerHTML = number;
-
-  target.append(square);
-  return square;
+function reset() {
+  container.innerHTML = "";
 }
 
 
-// 3. Random number
+// 2. Funzione per generare i quadrati
 
-function uniqueRandomNumberGenerator(max, min) {
+function squareGenerator(cellNumbers) {
+  const square = document.createElement("div");
+  square.classList.add("square-"+cellNumbers);
 
-  let number = Math.floor(Math.random() * (max - min + 1) ) + min;
-
-  // function createArrayNymbers(params) {
-  //   let listNumber = [];
-    
-  //   for (let x=1; 1<=100; x++){
-  //     listNumber.push(i);
-  //   }
-
-    // return listNumber;
-  // }
-
-  return number;
-
+  container.append(square);
+  return square;
 }

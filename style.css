@@ -28,6 +28,10 @@ footer{
 Main 
 */
 
+main{
+  color: white;
+}
+
 .main-wrapper{
   display: flex;
   justify-content: center;
@@ -40,7 +44,7 @@ Main
 .container{
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-items: center;
 
   width: 500px;
   height: 500px;
@@ -93,15 +97,8 @@ Main
   display: block;
 }
 
-.square-100.clicked{
+.square-100.clicked,
+.square-64.clicked,
+.square-49.clicked{
   background-color: skyblue;
 }
-
-
-/* .square-even{
-  background-color: aquamarine;
-}
-
-.square-odd{
-  background-color: brown;
-} */
